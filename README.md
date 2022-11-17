@@ -10,9 +10,9 @@
 
 1. **What is Repro steps?** *=> 2 points*
  - [ ] Logical steps for planning the structure of DB repository
- - [ ] Steps that are required in order to reproduce a bug in the system
+ - [x] Steps that are required in order to reproduce a bug in the system
  - [ ] Sequence of actions required to build a new nodejs server
- - [x] A process of creation of a new Github repository
+ - [ ] A process of creation of a new Github repository
 
 2. **What is the role of a helper in nodejs server architecture?** *=> 2 points*
  - [ ] Get the request from the router, treat the request parameters, prepare the response of the server to the consumer
