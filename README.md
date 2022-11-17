@@ -132,49 +132,56 @@ output is 'true'
 The function transforms the dictionary into an array of a generic type		
 
 20. **Fix the following code and fill the required gaps in it by the coding standards. The purpose of this code is to verify the user is a member of a specific role and in case the user is, a true return value should be returned by the isUserPermitted() method, otherwise false. Treat the comments as actual code written that should not be changed.** *=> 15 points*
+interface user {
+    id: number;
+    firstName: string;
+    lastName: string;
+    roles: role;
+  }
+  
+  interface dbUser {
+    id: number;
+    first_name: string;
+    last_name: string;
+    role_id: number;
+    role_title
+  }
 
-		interface user {
-			id: number;
-			firstName: string;
-			lastName: string;
-			roles: role;
-		}
-		
-		interface dbUser {
-			id: number;
-			first_name: string;
-			last_name: string;
-			role_id: number;
-			role_title
-		}
+  interface role {
+    id: number;
+    title: string;
+  }
 
-		interface role {
-			id: number;
-			title: string;
-		}
+  enum Role {
+    Administrator = 1,
+    RegularUser
+  }
+  public isUserPermitted(userId: number, roles: Role[]): Promise<bool> {
+    return new Promise<bool>((resolve, reject) => {
+      Promise.all([
+        this.getUser(userId), this.getRole(roles)
+      ])
+      .then((result: user, roles:role[]) => {
+        if (roles.some(item => result.roles.includes(item))){
+        resolve(result)
+        }
+        else{
+            reject("Not permited")
+        }
+    });
+  }
+}
+  
+  private getUser(userId: number): Promise<user> {
+    return new Promise<user>((resolve, reject) => {
+      // Access to the DB that returns the user data by id as dbUser or null
+    });
+  }
 
-		enum Role {
-			Administrator = 1,
-			RegularUser
-		}
-		
-		public isUserPermitted(userId: number, roles: Role[]): Promise<bool> {
-			return new Promise<bool>((resolve, reject) => {
-				Promise.all([
-					this.getUser(userId),
-				])
-				.then((user: user) => {
-					resolve(user.roles.indexOf(roles[0]) > -1);
-				});
-			});
-		}
-		
-		private getUser(userId: number): Promise<user> {
-			return new Promise<user>((resolve, reject) => {
-				// Access to the DB that returns the user data by id as dbUser or null
-			});
-		}
-
+  private getRole(roles:role[]): Promise<role[]> {
+    return new Promise<role[]>((resolve, reject) => {
+      // Access to the DB that returns the role data by id as dbRole or null
+    });
 
 ## Part III: Practice on dev machine *=> 33 points*
 
