@@ -28,45 +28,45 @@
 
 4. **What is the code of a request redirection in HTTP protocol?** *=> 2 points*
  - [ ] 2xx
- - [ ] 3xx
+ - [x] 3xx
  - [ ] 4xx
  - [ ] 5xx
 
 5. **What is a Jira ticket?** *=> 2 points*
- - [ ] A definition of a task that should be done or details of a bug opened in the system
+ - [x] A definition of a task that should be done or details of a bug opened in the system
  - [ ] A ticket by which the symmtric authentication is being processed. This key is tored in the operating system
  - [ ] A portion of data used to authenticate against a nodejs server
  - [ ] A synonym for a JWT token
 
 6. **Which npm package willl you use to get numerous help methods for arrays? (more than a single answer can be selected)** *=> 2 points*
- - [ ] Underscore
+ - [x] Underscore
  - [ ] Nodemon
- - [ ] Lodash
+ - [x] Lodash
  - [ ] All answers are correct
 
 7. **What is needed for enhancement of a security level of a JWT token?** *=> 2 points*
  - [ ] Password
- - [ ] Encryption
+ - [x] Encryption
  - [ ] A private key
  - [ ] Secret
 
 8. **What is dotenv?** *=> 2 points*
  - [ ] An environment of an operational system like release, production, etc.
- - [ ] An npm package that provides the ability to set different system parameters for different system environments
+ - [x] An npm package that provides the ability to set different system parameters for different system environments
  - [ ] A library of .Net nodejs environment
  - [ ] An npm package that is added by default while creating a new nodejs server
 
 9. **How will you ensure a specific value in a DB column that is not the IDENTITY column will not be duplicate? (more than a single answer can be selected)** *=> 2 points*
- - [ ] Add another private key on this column
+ - [x] Add another private key on this column
  - [ ] Add a UNIQUE CONSTRAINT to this column
- - [ ] Add a UNIQUE INDEX to this column
+ - [x] Add a UNIQUE INDEX to this column
  - [ ] I will add a method on my server to ensure no duplicates are recorded in the DB for this column
 
 10. **What is a log level** *=> 2 points*
  - [ ] Log level is a level at which and up log messages will be recorded in any log target
  - [ ] It's a level of details to which a design of a task should be aligned
  - [ ] A level of DB logs storage to provide log shipping for a better system performance
- - [ ] There is no correct answer
+ - [x] There is no correct answer
 
 
 ## Section B: Please, explain the following terms the best way you can *=> 22 points*
