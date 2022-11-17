@@ -11,11 +11,18 @@ class UserController {
 
     async getUserById(req: Request, res: Response, next: NextFunction) {
         LoggerService.debug("getUserById method start");
-        const userId: number = parseInt(req.params.id);
+        const userId: number|systemError = RequestHelper.ParseNumericInput(req.params.id);
         
-        LoggerService.debug("getUserById successful return");
-        const result: user = await UserService.getById(userId);
-        return res.status(200).json(result);
+        if(typeof userId === "number"){
+            const result: user = await UserService.getById(userId);
+            LoggerService.debug("getUserById successful return");
+            return res.status(200).json(result);
+
+        }
+        else{
+            return ResponseHelper.handleError(res, userId);
+        }
+        
     }
     
     async updateById(req: Request, res: Response, next: NextFunction) {

@@ -6,6 +6,7 @@ import { DateHelper } from "../../framework/date.helper";
 import { SqlHelper } from "../../core/sql.helper";
 import DbService from "../../core/db.service";
 import ErrorService from "../../core/error.service";
+import { query } from "express";
 
 interface localWhiteBoardType {
     id: number;
@@ -220,6 +221,22 @@ class SchoolService implements ISchoolService {
                     reject(error);
                 });
         });
+    }
+    public async getTeachers():Promise<teacher[]>{
+        return new Promise<teacher[]>((resolve, reject) =>{
+            SqlHelper.executeQueryArrayResult<localTeacher>(Queries.GetTeachers)
+            .then((queryResult:localTeacher[]) => {
+                let result:teacher[] =[];
+                queryResult.forEach((teacher:localTeacher) =>{
+                    result.push(this.parseLocalTeacher([teacher]))
+
+                })
+                resolve(result);
+            })
+            .catch((error: systemError) => {
+                reject(error);
+            });
+        })
     }
 
     public async updateTeacherById(teacher: teacher, userId: number): Promise<teacher> {

@@ -18,7 +18,7 @@ export class Queries {
     public static UpdateUserById: string = "UPDATE [user] SET first_name = ?, last_name = ?, update_date = ?, update_user_id = ? WHERE id = ? AND status_id = ?";
     public static AddUser: string = "INSERT [user] (first_name, last_name, login, password, role_id, create_date, update_date, create_user_id, update_user_id, status_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     public static DeleteUserById: string = "UPDATE [user] SET update_date = ?, update_user_id = ?, status_id = ? WHERE id = ? AND status_id = ?";
-
+    public static GetUserByLogin: string = "SELECT id, password, role_id FROM [user] WHERE login = ?";
     public static GetRoomById: string = `SELECT r.id, r.room_number, r.room_floor, r.is_has_projector,
                                             cu.id as create_user_id, cu.first_name as create_user_first_name, cu.last_name as create_user_last_name,
                                             uu.id as update_user_id, uu.first_name as update_user_first_name, uu.last_name as update_user_last_name,
@@ -49,6 +49,11 @@ export class Queries {
                                                                 WHERE teacher_id = ?`;  
     public static AddProfessionToTeacher: string = `INSERT teacher_to_profession (teacher_id, profession_id, graduation_year, sort_order)
                                                     VALUES (?, ?, ?, ?)`;
+    public static GetTeachers:string = `SELECT t.id, t.first_name, t.last_name, t.is_male, t.birthdate, p.id as profession_id, p.title as profession, tp.graduation_year
+                                            FROM teacher t
+                                            INNER JOIN teacher_to_profession tp ON t.id = tp.teacher_id
+                                            INNER JOIN profession p ON tp.profession_id = p.id`
+                                                   
 }
 
 export class StoredProcedures {
@@ -57,3 +62,5 @@ export class StoredProcedures {
 }
 
 export const NON_EXISTENT_ID: number = -1;
+export const TOKEN_SECRET:string = "ABSDCDASASAS"
+export const DB_CONNECTION_STRING:string = "server=.;Database=masa_school;Trusted_Connection=Yes;Driver={ODBC Driver 17 for SQL Server}"

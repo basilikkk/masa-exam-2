@@ -14,7 +14,7 @@ export class SchoolRoutes extends RouteConfig {
         this.app.route(`/${this.baseUrl}/board-types`).get([AuthMiddleware.verifyToken([Role.RegularUser]), SchoolController.getBoardTypes]);
         this.app.route(`/${this.baseUrl}/board-type/:id`).get([AuthMiddleware.verifyToken([Role.RegularUser]), SchoolController.getBoardTypeById]);
         this.app.route(`/${this.baseUrl}/board-type-by-title/:title`).get([AuthMiddleware.verifyToken([Role.RegularUser]), SchoolController.getBoardTypeByTitle]);
-        this.app.route(`/${this.baseUrl}/board-type/:id`).put([AuthMiddleware.verifyToken([Role.RegularUser]), SchoolController.updateBoardTypeById]);
+        this.app.route(`/${this.baseUrl}/board-type/:id`).put([AuthMiddleware.verifyToken([Role.RegularUser]), SchoolController.updateBoardType]);
         // this.app.route('/board-type', middleware.verifyToken([Role.Administrator, Role.RegularUser]), controller.addBoardType);
         // this.app.route('/board-type-sp', middleware.verifyToken([Role.Administrator, Role.RegularUser]), controller.addBoardTypeByStoredProcedure);
         // this.app.route('/board-type-sp-output', middleware.verifyToken([Role.Administrator, Role.RegularUser]), controller.addBoardTypeByStoredProcedureOutput);
@@ -27,6 +27,7 @@ export class SchoolRoutes extends RouteConfig {
         
         this.app.route(`/${this.baseUrl}/teacher/:id`).get([AuthMiddleware.verifyToken([Role.RegularUser]), SchoolController.getTeacherById]);
         this.app.route(`/${this.baseUrl}/teacher/:id`).put([AuthMiddleware.verifyToken([Role.RegularUser]), SchoolController.updateTeacherById]);
+        this.app.route(`/${this.baseUrl}/teachers`).get([AuthMiddleware.verifyToken([Role.Administrator]), SchoolController.getTeachers]);
         
         this.app.route(`/${this.baseUrl}/status/:id`).get([AuthMiddleware.verifyToken([Role.RegularUser]), SchoolController.getStatusById]);
 
