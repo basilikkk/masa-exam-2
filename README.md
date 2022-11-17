@@ -12,18 +12,18 @@
  - [ ] Logical steps for planning the structure of DB repository
  - [ ] Steps that are required in order to reproduce a bug in the system
  - [ ] Sequence of actions required to build a new nodejs server
- - [ ] A process of creation of a new Github repository
+ - [x] A process of creation of a new Github repository
 
 2. **What is the role of a helper in nodejs server architecture?** *=> 2 points*
  - [ ] Get the request from the router, treat the request parameters, prepare the response of the server to the consumer
- - [ ] Keep state of a specific logic portion of the system, provide processing of the data passed from the different controllers, parse the data and returned the processed response
+ - [x] Keep state of a specific logic portion of the system, provide processing of the data passed from the different controllers, parse the data and returned the processed response
  - [ ] To be the first element in the system that should service the consumer for his CRUD request to the server
  - [ ] To provide services to the system that do not require a state but should be used across the whole system
 
 3. **What is a foreign key?** *=> 2 points*
  - [ ] A key by which the JWT token is signed
  - [ ] A pair security key for a private key. This key is stored in online repository for asymmetric encryption processing
- - [ ] A way to link between 2 tables in the relational DB
+ - [x] A way to link between 2 tables in the relational DB
  - [ ] Such a term does not exist
 
 4. **What is the code of a request redirection in HTTP protocol?** *=> 2 points*
