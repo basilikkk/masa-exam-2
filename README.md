@@ -72,26 +72,37 @@
 ## Section B: Please, explain the following terms the best way you can *=> 22 points*
 
 11. **Constructor** *=> 4 points*
-
+Constructor - a function, which creates new object of function
 12. **Connection string** *=> 4 points*
-
+Connection string - a string with parametrs and information, neccesary to connect to a DB
 13. **IDENTITY & SEED** *=> 5 points*
-
+IDENTITY - when we determinate initial values in a DB;
+SEED - the value in the first row which loaded into the table
 14. **Abstract class** *=> 5 points*
-
+Abstract class - a restricted class that cannot be used to create objects
 15. **Export keyword in nodejs code** *=> 4 points*
-
+Creates an ability to use objects in one file in other files
  
 ## Part II: Practice on paper *=> 45 points*
 
 *No restrictions on online resources usage. You also may use your development machine for assistance in debugging if needed.*
 
 16. **You received a bug stating the following: "Intermittemtly this method results in an exception in the command line reporting of a Null reference." You're required to find and fix the problem in this method:** *=> 10 points*
+class Week {
+   
+    public static addWeeks(date: Date, value: number): Date {     
+    const dateCopy = new Date(date);
+        dateCopy.setDate(dateCopy.getDate() + 7 * value);
+        return dateCopy;
+    }
+}
 
-		public static addWeeks(date: Date, value: number): Date {
-            date.setDate(date.getDate() + (value * 7));
-            return date;
-        }
+const date = new Date('2022-11-17T00:00:00.000Z');
+const newDate = Week.addWeeks(date, 1);
+
+console.log(date);
+console.log("-------");
+console.log(newDate);
 
 17. **Having the following DB tables diagram:** *=> 10 points*
 
@@ -107,11 +118,18 @@ You need to write a query that returns for each user a full data. Consider that 
 
 18. **Write a method in JS/TS that gets as an argument 2 dates and returns a boolean value of whether those dates share the same month**. *=> 5 points*
 
+let compareDates = (date1, date2) => new Date(date1).getMonth()===new Date(date2).getMonth()?true:false;
+
+console.log(compareDates('2000-04-21', '2000-04-21'))
+
+output is 'true'
+
 19. **Explain the following piece of code:** *=> 5 points*
 
         public static dictionaryToArrayOfObjects<T>(input: _.Dictionary<T>): T[] {
             return _.map(Object.getOwnPropertyNames(input), (key: string) => input[key]);
         }
+The function transforms the dictionary into an array of a generic type		
 
 20. **Fix the following code and fill the required gaps in it by the coding standards. The purpose of this code is to verify the user is a member of a specific role and in case the user is, a true return value should be returned by the isUserPermitted() method, otherwise false. Treat the comments as actual code written that should not be changed.** *=> 15 points*
 
