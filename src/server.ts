@@ -8,7 +8,7 @@ import authenticationRoutes from './routes/authentication.routes';
 import userRoutes from './routes/user.routes';
 
 const router: Express = express();
-gfg
+
 /** Logging */
 router.use(morgan('dev'));
 /** Parse the request */
