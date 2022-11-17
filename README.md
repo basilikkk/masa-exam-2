@@ -46,9 +46,9 @@
 
 7. **What is needed for enhancement of a security level of a JWT token?** *=> 2 points*
  - [ ] Password
- - [x] Encryption
+ - [ ] Encryption
  - [ ] A private key
- - [ ] Secret
+ - [x] Secret
 
 8. **What is dotenv?** *=> 2 points*
  - [ ] An environment of an operational system like release, production, etc.
@@ -63,10 +63,10 @@
  - [ ] I will add a method on my server to ensure no duplicates are recorded in the DB for this column
 
 10. **What is a log level** *=> 2 points*
- - [ ] Log level is a level at which and up log messages will be recorded in any log target
+ - [x] Log level is a level at which and up log messages will be recorded in any log target
  - [ ] It's a level of details to which a design of a task should be aligned
  - [ ] A level of DB logs storage to provide log shipping for a better system performance
- - [x] There is no correct answer
+ - [ ] There is no correct answer
 
 
 ## Section B: Please, explain the following terms the best way you can *=> 22 points*
